@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Feliz Día de la Novia ❤️</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,Helvetica,sans-serif;
+}
+
+body{
+    background:linear-gradient(#050505,#111);
+    overflow:hidden;
+    color:white;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+}
+
+h1{
+    margin-bottom:40px;
+    font-size:40px;
+    animation:fade 2s;
+}
+
+.garden{
+    display:flex;
+    gap:60px;
+}
+
+.flower{
+    position:relative;
+    width:120px;
+    height:250px;
+    animation:bloom 2s ease forwards;
+}
+
+.flower:nth-child(2){
+    animation-delay:.7s;
+}
+
+.flower:nth-child(3){
+    animation-delay:1.4s;
+}
+
+.stem{
+    position:absolute;
+    width:8px;
+    height:170px;
+    background:#2ecc71;
+    left:56px;
+    top:70px;
+}
+
+.center{
+    width:35px;
+    height:35px;
+    background:#ffe066;
+    border-radius:50%;
+    position:absolute;
+    left:42px;
+    top:55px;
+    z-index:2;
+}
+
+.petal{
+    width:45px;
+    height:45px;
+    background:#ff8ac6;
+    position:absolute;
+    border-radius:50%;
+}
+
+.p1{left:40px;top:10px;}
+.p2{left:0;top:50px;}
+.p3{left:80px;top:50px;}
+.p4{left:40px;top:90px;}
+
+#mensaje{
+    margin-top:50px;
+    font-size:30px;
+    min-height:40px;
+}
+
+@keyframes bloom{
+    from{
+        transform:translateY(120px) scale(0);
+        opacity:0;
+    }
+    to{
+        transform:translateY(0) scale(1);
+        opacity:1;
+    }
+}
+
+@keyframes fade{
+    from{opacity:0;}
+    to{opacity:1;}
+}
+</style>
+
+</head>
+<body>
+
+<h1>🌸 Feliz Día de la Novia 🌸</h1>
+
+<div class="garden">
+
+<div class="flower">
+<div class="center"></div>
+<div class="petal p1"></div>
+<div class="petal p2"></div>
+<div class="petal p3"></div>
+<div class="petal p4"></div>
+<div class="stem"></div>
+</div>
+
+<div class="flower">
+<div class="center"></div>
+<div class="petal p1"></div>
+<div class="petal p2"></div>
+<div class="petal p3"></div>
+<div class="petal p4"></div>
+<div class="stem"></div>
+</div>
+
+<div class="flower">
+<div class="center"></div>
+<div class="petal p1"></div>
+<div class="petal p2"></div>
+<div class="petal p3"></div>
+<div class="petal p4"></div>
+<div class="stem"></div>
+</div>
+
+</div>
+
+<div id="mensaje"></div>
+
+<script>
+const texto="❤️ Te amo muchísimo ❤️";
+
+let i=0;
+
+function escribir(){
+    if(i<texto.length){
+        document.getElementById("mensaje").innerHTML+=texto.charAt(i);
+        i++;
+        setTimeout(escribir,100);
+    }
+}
+
+setTimeout(escribir,2500);
+</script>
+
+</body>
+</html>
